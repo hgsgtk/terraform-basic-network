@@ -16,9 +16,13 @@
     - cidr: 10.1.1.0/24
     - name tag: "Public Subnet by Terraform"
   - [ ] private subnet
-- EC2 instances
+- [ ] Security group
+  - [x] web security group
+  - [ ] db security group
+- [ ] EC2 instances
   - [ ] instance for web server
     - in public subnet
+    - [ ] key pair for ssh
   - [ ] instance for db server
     - in private subnet
 
@@ -66,5 +70,9 @@ $ terraform destroy
 - [Terraform公式リファレンス：Resource: aws_internet_gateway](https://www.terraform.io/docs/providers/aws/r/internet_gateway.html)
 - [Terraform公式リファレンス：Resource: aws_route_table](https://www.terraform.io/docs/providers/aws/r/route_table.html)
 - [Terraform公式リファレンス：Resource: aws_route_table_association](https://www.terraform.io/docs/providers/aws/r/route_table_association.html)
+- [Terraform公式リファレンス：Resource: aws_instance](https://www.terraform.io/docs/providers/aws/r/instance.html)
+- [Terraform公式リファレンス：Resource: aws_security_group](https://www.terraform.io/docs/providers/aws/r/security_group.html)
 - [Terraform公式リファレンス：getting-started#Initialization](https://www.terraform.io/intro/getting-started/build.html#initialization)
 - [Terraform公式リファレンス：getting-started#ApplyChanges](https://www.terraform.io/intro/getting-started/build.html#apply-changes)
+- [Hashicorp/terraform:issues#2164 How to give a single security group for an aws instance ?](https://github.com/hashicorp/terraform/issues/2164)
+- [Terraform でキーペア登録し起動した EC2 に SSH接続](http://kenzo0107.hatenablog.com/entry/2017/03/27/215941)

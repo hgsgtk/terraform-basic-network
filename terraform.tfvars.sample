@@ -1,0 +1,5 @@
+aws_access_key = "YOUR-ACCESS-KEY"
+aws_secret_key = "YOUR-SECRET-KEY"
+
+key_name = "terraform-basic-key"
+public_key_path = "~/.ssh/terraform-basic-key.pub"
