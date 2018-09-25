@@ -6,6 +6,8 @@
 - [x] VPC
   - 10.1.0.0/16
   - name tag: "VPC領域：Terraform"
+- [ ] Internet Gateway
+  - attached with VPC
 - [ ] Subnets
   - [x] public subnet
     - cidr: 10.1.1.0/24
@@ -55,8 +57,11 @@ $ terraform destroy
 ## Terraformについて
 - [Terraform公式リファレンス：Configuration: Data Source Configuration](https://www.terraform.io/docs/configuration/data-sources.html)
 - [Terraform公式リファレンス：Configuration: Resource Configuration](https://www.terraform.io/docs/configuration/resources.html)
-- [Terraform公式リファレンス：Data Source: AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
-- [Terraform公式リファレンス：Data Source: aws_vpc](https://www.terraform.io/docs/providers/aws/r/vpc.html)
-- [Terraform公式リファレンス：Data Source: aws_subnet](https://www.terraform.io/docs/providers/aws/r/subnet.html)
+- [Terraform公式リファレンス：Resource: AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
+- [Terraform公式リファレンス：Resource: aws_vpc](https://www.terraform.io/docs/providers/aws/r/vpc.html)
+- [Terraform公式リファレンス：Resource: aws_subnet](https://www.terraform.io/docs/providers/aws/r/subnet.html)
+- [Terraform公式リファレンス：Resource: aws_internet_gateway](https://www.terraform.io/docs/providers/aws/r/internet_gateway.html)
+- [Terraform公式リファレンス：Resource: aws_route_table](https://www.terraform.io/docs/providers/aws/r/route_table.html)
+- [Terraform公式リファレンス：Resource: aws_route_table_association](https://www.terraform.io/docs/providers/aws/r/route_table_association.html)
 - [Terraform公式リファレンス：getting-started#Initialization](https://www.terraform.io/intro/getting-started/build.html#initialization)
 - [Terraform公式リファレンス：getting-started#ApplyChanges](https://www.terraform.io/intro/getting-started/build.html#apply-changes)
