@@ -11,20 +11,21 @@
 - [x] Route table
   - association with public subnet
   - association with Internet Gateway
-- [ ] Subnets
+- [x] Subnets
   - [x] public subnet
     - cidr: 10.1.1.0/24
     - name tag: "Public Subnet by Terraform"
-  - [ ] private subnet
-- [ ] Security group
+  - [x] private subnet
+- [x] Security group
   - [x] web security group
-  - [ ] db security group
-- [ ] EC2 instances
+  - [x] db security group
+- [x] EC2 instances
   - [x] instance for web server
     - in public subnet
     - [x] key pair for ssh
-  - [ ] instance for db server
+  - [x] instance for db server
     - in private subnet
+- [ ] NAT Gateway
 
 # 使い方
 - Terraformをinstall
@@ -76,3 +77,4 @@ $ terraform destroy
 - [Terraform公式リファレンス：getting-started#ApplyChanges](https://www.terraform.io/intro/getting-started/build.html#apply-changes)
 - [Hashicorp/terraform:issues#2164 How to give a single security group for an aws instance ?](https://github.com/hashicorp/terraform/issues/2164)
 - [Terraform でキーペア登録し起動した EC2 に SSH接続](http://kenzo0107.hatenablog.com/entry/2017/03/27/215941)
+- [feedforce Enginner's Blog: terraformを使ってAWS環境を構築する](http://tech.feedforce.jp/startup-terraform.html)

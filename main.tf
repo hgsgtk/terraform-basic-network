@@ -38,9 +38,20 @@ resource "aws_route_table" "r" {
 resource "aws_subnet" "public" {
   vpc_id = "${aws_vpc.main.id}"
   cidr_block = "10.1.1.0/24"
+  availability_zone = "ap-northeast-1a"
 
   tags {
     Name = "Public Subnet by Terraform"
+  }
+}
+
+resource "aws_subnet" "private" {
+  vpc_id = "${aws_vpc.main.id}"
+  cidr_block = "10.1.2.0/24"
+  availability_zone = "ap-northeast-1a"
+
+  tags {
+    Name = "Private Subnet by Terraform"
   }
 }
 
@@ -68,8 +79,42 @@ resource "aws_security_group" "wsg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress{
+    from_port = -1
+    to_port = -1
+    protocol = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   tags{
     Name = "web-sg"
+  }
+}
+
+resource "aws_security_group" "dsg" {
+  name = "db-sg"
+  description = "db-sg security group created by Terraform"
+  vpc_id = "${aws_vpc.main.id}"
+
+  ingress{
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress{
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress{
+    from_port = -1
+    to_port = -1
+    protocol = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
@@ -91,5 +136,21 @@ resource "aws_instance" "web" {
 
   tags {
     Name = "Web Server by Terraform"
+  }
+}
+
+resource "aws_instance" "db" {
+  ami = "ami-08847abae18baa040" // Amazon Linux 2 AMI (HVM), SSD Volume Type
+  instance_type = "t2.micro"
+  subnet_id = "${aws_subnet.private.id}"
+  associate_public_ip_address = false
+  private_ip = "10.1.2.10"
+  security_groups = [
+    "${aws_security_group.dsg.id}"
+  ]
+  key_name = "${aws_key_pair.auth.id}"
+
+  tags {
+    Name = "DB Server by Terraform"
   }
 }
