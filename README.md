@@ -25,7 +25,8 @@
     - [x] key pair for ssh
   - [x] instance for db server
     - in private subnet
-- [ ] NAT Gateway
+- [x] NAT Gateway
+  - EIP for nat
 
 # 使い方
 - Terraformをinstall
@@ -73,8 +74,13 @@ $ terraform destroy
 - [Terraform公式リファレンス：Resource: aws_route_table_association](https://www.terraform.io/docs/providers/aws/r/route_table_association.html)
 - [Terraform公式リファレンス：Resource: aws_instance](https://www.terraform.io/docs/providers/aws/r/instance.html)
 - [Terraform公式リファレンス：Resource: aws_security_group](https://www.terraform.io/docs/providers/aws/r/security_group.html)
+- [Terraform公式リファレンス：Resource: aws_eip](https://www.terraform.io/docs/providers/aws/r/eip.html)
+- [Terraform公式リファレンス：Resource: aws_nat_gateway](https://www.terraform.io/docs/providers/aws/r/nat_gateway.html)
 - [Terraform公式リファレンス：getting-started#Initialization](https://www.terraform.io/intro/getting-started/build.html#initialization)
 - [Terraform公式リファレンス：getting-started#ApplyChanges](https://www.terraform.io/intro/getting-started/build.html#apply-changes)
 - [Hashicorp/terraform:issues#2164 How to give a single security group for an aws instance ?](https://github.com/hashicorp/terraform/issues/2164)
 - [Terraform でキーペア登録し起動した EC2 に SSH接続](http://kenzo0107.hatenablog.com/entry/2017/03/27/215941)
+
+## Terraform事例
 - [feedforce Enginner's Blog: terraformを使ってAWS環境を構築する](http://tech.feedforce.jp/startup-terraform.html)
+- [Wantedly Advent Calendar 2015: Terraform と CI で実現するインフラのコード化と構築の自動化](https://qiita.com/dtan4/items/ab1671d657f1571e59d8)
