@@ -6,8 +6,11 @@
 - [x] VPC
   - 10.1.0.0/16
   - name tag: "VPC領域：Terraform"
-- [ ] Internet Gateway
+- [x] Internet Gateway
   - attached with VPC
+- [x] Route table
+  - association with public subnet
+  - association with Internet Gateway
 - [ ] Subnets
   - [x] public subnet
     - cidr: 10.1.1.0/24
