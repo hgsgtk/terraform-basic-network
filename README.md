@@ -7,7 +7,9 @@
   - 10.1.0.0/16
   - name tag: "VPC領域：Terraform"
 - [ ] Subnets
-  - [ ] public subnet
+  - [x] public subnet
+    - cidr: 10.1.1.0/24
+    - name tag: "Public Subnet by Terraform"
   - [ ] private subnet
 - EC2 instances
   - [ ] instance for web server
@@ -51,7 +53,10 @@ $ terraform destroy
 - [Amazon Elastic Compute Cloud:利用できるリージョン](https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions)
 
 ## Terraformについて
-- [Terraform公式リファレンス：AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
-- [Terraform公式リファレンス：aws_vpc](https://www.terraform.io/docs/providers/aws/r/vpc.html)
+- [Terraform公式リファレンス：Configuration: Data Source Configuration](https://www.terraform.io/docs/configuration/data-sources.html)
+- [Terraform公式リファレンス：Configuration: Resource Configuration](https://www.terraform.io/docs/configuration/resources.html)
+- [Terraform公式リファレンス：Data Source: AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
+- [Terraform公式リファレンス：Data Source: aws_vpc](https://www.terraform.io/docs/providers/aws/r/vpc.html)
+- [Terraform公式リファレンス：Data Source: aws_subnet](https://www.terraform.io/docs/providers/aws/r/subnet.html)
 - [Terraform公式リファレンス：getting-started#Initialization](https://www.terraform.io/intro/getting-started/build.html#initialization)
 - [Terraform公式リファレンス：getting-started#ApplyChanges](https://www.terraform.io/intro/getting-started/build.html#apply-changes)

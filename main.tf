@@ -11,3 +11,12 @@ resource "aws_vpc" "main" {
     Name = "VPC領域：Terraform"
   }
 }
+
+resource "aws_subnet" "web" {
+  vpc_id = "${aws_vpc.main.id}"
+  cidr_block = "10.1.1.0/24"
+
+  tags {
+    Name = "Public Subnet by Terraform"
+  }
+}
