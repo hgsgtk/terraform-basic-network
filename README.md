@@ -20,9 +20,9 @@
   - [x] web security group
   - [ ] db security group
 - [ ] EC2 instances
-  - [ ] instance for web server
+  - [x] instance for web server
     - in public subnet
-    - [ ] key pair for ssh
+    - [x] key pair for ssh
   - [ ] instance for db server
     - in private subnet
 
